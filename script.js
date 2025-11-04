@@ -7,7 +7,7 @@ weatherForm.addEventListener("submit", async event => {
 
     event.preventDefault();
 
-    const city = cityInput.value;
+    const city = cityInput.value.trim();
     if (city) {
         try {
             const weatherData = await getWeatherData(city);
@@ -95,4 +95,5 @@ function displayError(message) {
     card.textContent = "";
     card.style.display = "flex";
     card.appendChild(errorDisplay);
+
 }
